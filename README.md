@@ -6,7 +6,7 @@ It shows:
 
 - ✅ Current CPU usage
 - ✅ Memory (RAM) usage
-- ✅ CPU temperature (when available)
+- ✅ CPU temperature
 
 ---
 
@@ -92,7 +92,6 @@ Then, in VS Code:
 
 - ✅ Windows
 - ✅ Linux
-- ✅ macOS
 
 > Note: temperature may not be available on all hardware/systems.
 
