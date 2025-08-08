@@ -49,6 +49,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "edge-js": "^24.0.4",
     "systeminformation": "^5.27.7"
   }
 }
