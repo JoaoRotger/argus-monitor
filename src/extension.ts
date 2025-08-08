@@ -41,7 +41,7 @@ function startMonitoringLinux(statusBarItem: vscode.StatusBarItem, context: vsco
                 text += ` | Temp: ${temp.main.toFixed(0)}°C`;
             }
 
-            statusBarItem.text = 'testando'; //text;
+            statusBarItem.text = text;
         } catch (err) {
             statusBarItem.text = `Erro ao ler dados`;
             console.error(err);
