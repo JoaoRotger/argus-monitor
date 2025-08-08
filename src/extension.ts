@@ -35,7 +35,7 @@ function startMonitoringLinux(statusBarItem: vscode.StatusBarItem, context: vsco
 
             const cpuUsage = cpu.currentLoad.toFixed(1);
             const ramUsage = ((mem.active / mem.total) * 100).toFixed(1);
-            let text = `Testando | CPU: ${cpuUsage}% | RAM: ${ramUsage}%`;
+            let text = `CPU: ${cpuUsage}% | RAM: ${ramUsage}%`;
 
             if (typeof temp.main === 'number' && !isNaN(temp.main)) {
                 text += ` | Temp: ${temp.main.toFixed(0)}°C`;
