@@ -4,7 +4,7 @@ import * as assert from 'assert';
 import * as vscode from 'vscode';
 import sinon from 'sinon';
 
-describe('System Monitor Extension - Métricas', () => {
+describe('Argus Monitor Extension - Métricas', () => {
     let extension: vscode.Extension<any> | undefined;
     let sandbox: sinon.SinonSandbox;
 

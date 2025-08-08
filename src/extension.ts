@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import * as os from 'os';
 import * as si from 'systeminformation';
 
 export function activate(context: vscode.ExtensionContext) {
@@ -6,6 +7,24 @@ export function activate(context: vscode.ExtensionContext) {
     statusBarItem.text = `$(pulse) Monitorando...`;
     statusBarItem.show();
 
+    detectAndStartMonitoring(statusBarItem, context);
+}
+
+function detectAndStartMonitoring(statusBarItem: vscode.StatusBarItem, context: vscode.ExtensionContext) {
+    const platform = os.platform();
+
+    if (platform === 'linux') {
+        statusBarItem.text = `SO: ${platform}`;
+        startMonitoringLinux(statusBarItem, context);
+    } else if (platform === 'win32') {
+        statusBarItem.text = `Monitoramento para Windows ainda não implementado`;
+        
+    } else {
+        statusBarItem.text = `OS não suportado`;
+    }
+}
+
+function startMonitoringLinux(statusBarItem: vscode.StatusBarItem, context: vscode.ExtensionContext) {
     let interval: NodeJS.Timeout | undefined;
 
     async function updateStats() {
@@ -17,9 +36,11 @@ export function activate(context: vscode.ExtensionContext) {
             const cpuUsage = cpu.currentLoad.toFixed(1);
             const ramUsage = ((mem.active / mem.total) * 100).toFixed(1);
             let text = `CPU: ${cpuUsage}% | RAM: ${ramUsage}%`;
+
             if (typeof temp.main === 'number' && !isNaN(temp.main)) {
                 text += ` | Temp: ${temp.main.toFixed(0)}°C`;
             }
+
             statusBarItem.text = text;
         } catch (err) {
             statusBarItem.text = `Erro ao ler dados`;
@@ -39,4 +60,7 @@ export function activate(context: vscode.ExtensionContext) {
     });
 }
 
-export function deactivate() {}
+function startMonitoringWindows(statusBarItem: vscode.StatusBarItem) {
+    // Temporariamente exibe mensagem padrão
+    statusBarItem.text = 'Monitoramento para Windows ainda não implementado';
+}

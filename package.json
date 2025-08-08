@@ -1,6 +1,6 @@
 {
-  "name": "system-monitor",
-  "displayName": "system-monitor",
+  "name": "argus-monitor",
+  "displayName": "Argus Monitor",
   "description": "",
   "repository": {
     "type": "git",
