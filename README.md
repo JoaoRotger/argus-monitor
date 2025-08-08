@@ -1,4 +1,4 @@
-# 📌 System Monitor – VS Code Extension
+# 📌 Argus Monitor – VS Code Extension
 
 This is a Visual Studio Code extension that displays, in real time, information about your computer’s performance directly in the **status bar** of VS Code.
 
