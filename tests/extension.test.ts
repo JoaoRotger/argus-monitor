@@ -1,7 +1,7 @@
 import * as assert from 'assert';
 import * as vscode from 'vscode';
 
-describe('System Monitor Extension', () => {
+describe('Argus Monitor Extension', () => {
     let extension: vscode.Extension<any> | undefined;
 
     beforeEach(() => {
