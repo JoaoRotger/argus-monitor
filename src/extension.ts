@@ -14,7 +14,7 @@ function detectAndStartMonitoring(statusBarItem: vscode.StatusBarItem, context: 
     const platform = os.platform();
 
     if (platform === 'linux') {
-        statusBarItem.text = 'SO: ${platform}';
+        statusBarItem.text = `SO: ${platform}`;
         //startMonitoringLinux(statusBarItem, context);
     } else if (platform === 'win32') {
         statusBarItem.text = `Monitoramento para Windows ainda não implementado`;
